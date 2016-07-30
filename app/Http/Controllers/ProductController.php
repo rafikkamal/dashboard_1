@@ -52,28 +52,9 @@ class ProductController extends Controller {
     }
     public function showProduct(){
         $products = Product::orderBy('id', 'ASC')->paginate(20);
-        $var =  json_encode($products);
-        if($products->count()){
-            $status = "200";
-        }
-        $var1 = json_encode(array(
-            'status'=>$status,
-            'products'=>$products
-        ));
-        return $var1; 
-        //echo $var1;
-        /*$var2 = json_decode($var1);
-        
-        $var4=array();
-        foreach($products as $product){
-            $var4[$product->id] = $product->title;
-        }
-        print_r($var4);
-        */
-        
-        //return json_encode($var2->products);
-        //return view('products.show', ['products' => $products]);
+        return view('products.show', ['products' => $products]);
     }
+    
     public function deleteProduct($id){
         $product = Product::find($id);
         $product->delete();
