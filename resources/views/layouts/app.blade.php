@@ -16,8 +16,7 @@
     </head>
     <body id="app-layout">
         @include('layouts.header')
-        @include('layouts.banner')
-        @include('layouts.slider_promo')
+        @yield('content')
 <!--        @include('layouts.slider')-->
         <!--        @include('layouts.footer')-->
         <script type="text/javascript">

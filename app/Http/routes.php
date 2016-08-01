@@ -22,6 +22,8 @@ Route::get('/dashboard', [
     'as' => 'dashboard', 
     'uses' => 'ProductController@index'
 ]);
+//Log In Route
+Route::auth();
 //Products Route
 Route::get('/product',[
     'as' => 'products.index',
